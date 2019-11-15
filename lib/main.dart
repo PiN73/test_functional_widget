@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,8 +20,13 @@ class MyHomePage extends StatelessWidget {
         title: Text('Test Functional Widget'),
       ),
       body: Center(
-        child: Text('Hi'),
+        child: Foo(42),
       ),
     );
   }
+}
+
+@widget
+Widget foo(BuildContext context, int value) {
+  return Text('$value');
 }
